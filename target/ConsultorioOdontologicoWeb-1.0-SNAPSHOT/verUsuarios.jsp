@@ -35,13 +35,17 @@
                             <th>Rol</th>
                         </tr>
                     </tfoot>
-                    <% List<Usuario>listaUsuarios=(List)request.getAttribute("listaUser");%>
+                    <% 
+                        List<Usuario>listaUsuarios=(List)request.getSession().getAttribute("listaUser");
+                    %>
                     <tbody>
+                        <% for (Usuario usu : listaUsuarios){ %>
                         <tr>
-                            <td>1</td>
-                            <td>Admin</td>
-                            <td>Admnistrador</td>
+                            <td><%=usu.getIdUsuario()%></td>
+                            <td><%=usu.getNombreUsuario()%></td>
+                            <td><%=usu.getRol()%></td>
                         </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </div>
