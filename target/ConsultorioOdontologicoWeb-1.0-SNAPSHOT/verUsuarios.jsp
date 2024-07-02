@@ -47,14 +47,14 @@
                             
                             <td style="display:flex;width:230px;">
                                 <form name="eliminar" action="SvElimUsuario" method="POST">
-                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="background-color: red; margin-right: 5px;">
+                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">
                                         <i class="fas fa-trash-alt"></i> Eliminar   
                                     </button>
                                     <input type="hidden" name="id" value="<%=usu.getIdUsuario()%>">
                                 </form>
                                 
-                                <form name="eliminar" action="SvElimUsuario" method="POST">
-                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="margin-left: 5px;">
+                                <form name="editar" action="SvEditUsuario" method="GET">
+                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
                                         <i class="fas fa-pencil-alt"></i> Editar   
                                     </button>
                                     <input type="hidden" name="id" value="<%=usu.getIdUsuario()%>">

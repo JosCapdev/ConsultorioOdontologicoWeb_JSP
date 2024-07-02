@@ -63,7 +63,6 @@
                         <h6 class="collapse-header">Acciones</h6>
                         <a class="collapse-item" href="buttons.html">Ver Pacientes</a>
                         <a class="collapse-item" href="buttons.html">Alta Pacientes</a>
-                        <a class="collapse-item" href="buttons.html">Baja Pacientes</a>
                     </div>
                 </div>
             </li>
@@ -81,7 +80,6 @@
                         <h6 class="collapse-header">Acciones</h6>
                         <a class="collapse-item" href="SvUsuarios">Ver Usuarios</a>
                         <a class="collapse-item" href="altaUsuario.jsp">Alta Usuarios</a>
-                        <a class="collapse-item" href="">Baja Usuarios</a>
                     </div>
                 </div>
             </li>

@@ -23,4 +23,17 @@ public class Controladora {
     public List<Usuario> getUsuarios() {
         return controlPers.listarUsuarios();
     }
+
+    public void eliminarUser(int id) {
+        controlPers.eliminarUser(id);
+    }
+
+    public Usuario traerUser(int id) {
+        return controlPers.traerUser(id);
+    }
+
+    public void editarUser(Usuario usu) {
+        controlPers.editarUser(usu);
+    }
+
 }
