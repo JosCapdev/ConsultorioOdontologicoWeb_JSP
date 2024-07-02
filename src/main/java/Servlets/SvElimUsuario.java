@@ -30,7 +30,7 @@ public class SvElimUsuario extends HttpServlet {
         
         int id = Integer.parseInt(request.getParameter("id"));
         control.eliminarUser(id);
-        response.sendRedirect("verUsuarios.jsp");
+        response.sendRedirect("SvUsuarios");
         
     }
 

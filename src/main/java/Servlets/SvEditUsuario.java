@@ -45,7 +45,7 @@ public class SvEditUsuario extends HttpServlet {
         usu.setRol(rol);
         
         control.editarUser(usu);
-        response.sendRedirect("verUsuarios.jsp");
+        response.sendRedirect("SvUsuarios");
     }
 
     @Override
