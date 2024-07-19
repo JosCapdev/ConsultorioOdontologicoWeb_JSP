@@ -35,26 +35,29 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                                <img src="https://static.vecteezy.com/system/resources/previews/000/488/957/original/logo-for-a-dental-clinic-vector-illustration.jpg"
+                                     height="400px" width="400px"/>
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Ingreso Clinica</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="SvLogin" method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                            <input class="form-control form-control-user"
+                                                id="usuario" name="usuario" 
                                                 placeholder="Ingrese Usuario">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Contraseña">
+                                                id="pass" name="pass" placeholder="Contraseña">
                                         </div>
                                         
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button class="btn btn-primary btn-user btn-block" type="submit">
                                             Ingresar
-                                        </a>
+                                        </button>
                                         <hr>
                                     </form>
                                     <hr>
