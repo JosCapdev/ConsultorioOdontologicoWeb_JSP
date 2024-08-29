@@ -4,6 +4,7 @@
  */
 package Persistencia;
 
+import Logica.Odontologo;
 import Logica.Usuario;
 import Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -51,6 +52,34 @@ public class ControladoraPersistencia {
         try {
             userJpa.edit(usu);
         } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void crearOdonto(Odontologo odonto) {
+        odontJpa.create(odonto);
+    }
+
+    public List<Odontologo> listarOdontologos() {
+        return odontJpa.findOdontologoEntities();
+    }
+
+    public Odontologo traerOdonto(int id) {
+        return odontJpa.findOdontologo(id);
+    }
+
+    public void editarOdonto(Odontologo odonto) {
+        try {
+            odontJpa.edit(odonto);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void eliminarOdonto(int id) {
+        try {
+            odontJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

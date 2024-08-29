@@ -1,3 +1,4 @@
+
 package Servlets;
 
 import Logica.Controladora;
@@ -8,29 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "SvElimUsuario", urlPatterns = {"/SvElimUsuario"})
-public class SvElimUsuario extends HttpServlet {
+@WebServlet(name = "SvElimOdonto", urlPatterns = {"/SvElimOdonto"})
+public class SvElimOdonto extends HttpServlet {
     Controladora control = new Controladora();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
     }
 
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int id = Integer.parseInt(request.getParameter("id"));
-        control.eliminarUser(id);
-        response.sendRedirect("SvUsuarios");
-        
+        int id = Integer.parseInt(request.getParameter("idOdont"));
+        control.eliminarOdonto(id);
+        response.sendRedirect("SvOdontologo");
     }
 
     @Override

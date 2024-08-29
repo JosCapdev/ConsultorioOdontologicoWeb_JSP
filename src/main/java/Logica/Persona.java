@@ -38,6 +38,15 @@ public class Persona implements Serializable {
         this.fechaNac = fechaNac;
     }
 
+    public Persona(String dni, String nombre, String apellido, String telefono, String direccion, Date fechaNac) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.fechaNac = fechaNac;
+    }
+
     public int getId() {
         return id;
     }

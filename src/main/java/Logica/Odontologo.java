@@ -29,6 +29,13 @@ public class Odontologo extends Persona implements Serializable {
         this.horario = horario;
     } 
 
+    public Odontologo(String especialidad, String dni, String nombre, String apellido, String telefono, String direccion, Date fechaNac) {
+        super(dni, nombre, apellido, telefono, direccion, fechaNac);
+        this.especialidad = especialidad;
+    }
+
+    
+
 //    public int getIdOdontologo() {
 //        return idOdontologo;
 //    }

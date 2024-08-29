@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Logica;
 
 import Persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -51,6 +48,26 @@ public class Controladora {
             }
         }
         return ingreso;
+    }
+
+    public void crearOdonto(Odontologo odonto) {
+        controlPers.crearOdonto(odonto);
+    }
+
+    public List<Odontologo> getOdontologos() {
+        return controlPers.listarOdontologos();
+    }
+
+    public Odontologo traerOdonto(int id) {
+        return controlPers.traerOdonto(id);
+    }
+
+    public void editarOdonto(Odontologo odonto) {
+        controlPers.editarOdonto(odonto);
+    }
+
+    public void eliminarOdonto(int id) {
+        controlPers.eliminarOdonto(id);
     }
 
 }

@@ -4,40 +4,40 @@
 
 <h1>Alta Odontologos</h1>
 <p>Esto es una prueba</p>
-<form class="user">
+<form class="user" action="SvOdontologo" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="dni"
+            <input type="text" class="form-control form-control-user" id="dni" name="dni"
                    placeholder="DNI">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="nombre"
+            <input type="text" class="form-control form-control-user" id="nombre" name="nombre"
                    placeholder="Nombre">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="apellido"
+            <input type="text" class="form-control form-control-user" id="apellido" name="apellido"
                    placeholder="Apellido">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="telefono"
+            <input type="text" class="form-control form-control-user" id="telefono" name="telefono"
                    placeholder="Teléfono">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="direccion"
+            <input type="text" class="form-control form-control-user" id="direccion" name="direccion"
                    placeholder="Dirección">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="fechaNac"
+            <input type="text" class="form-control form-control-user" id="fechNac" name="fechNac"
                    placeholder="Fecha Nacimiento">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="especialidad"
+            <input type="text" class="form-control form-control-user" id="especialidad" name="especialidad"
                    placeholder="Especialidad">
         </div>
 
-        <a href="#" class="btn btn-primary btn-user btn-block">
+        <button class="btn btn-primary btn-user btn-block" type="submit">
             Crear Odontologo
-        </a>
+        </button>
 </form>
 
 <%@include file="components/bodyFinal.jsp" %>
