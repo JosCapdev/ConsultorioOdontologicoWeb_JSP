@@ -10,7 +10,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Ver Usuarios</h1>
+    <h1 class="h3 mb-2 text-gray-800">Ver Odontologos</h1>
     <p class="mb-4">A continuación podrá visualizar la lista completa de Odontologos</p>
 
     <!-- DataTales Example -->
@@ -46,10 +46,10 @@
                         </tr>
                     </tfoot>
                     <% 
-                        List<Odontologo>listaOdonto=(List)request.getSession().getAttribute("listaOdonto");
+                        List<Odontologo>listaOdontologo=(List)request.getSession().getAttribute("listaOdonto");
                     %>
                     <tbody>
-                        <% for (Odontologo odonto : listaOdonto){ %>
+                        <% for (Odontologo odonto : listaOdontologo){ %>
                         <tr>
                             <td><%=odonto.getId()%></td>
                             <td><%=odonto.getDni()%></td>

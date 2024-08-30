@@ -29,7 +29,7 @@ public class SvOdontologo extends HttpServlet {
         System.out.println("lista sv: "+listaOdontologos);
         HttpSession miSession = request.getSession();
         miSession.setAttribute("listaOdonto", listaOdontologos);
-        response.sendRedirect("verOdontologs.jsp");
+        response.sendRedirect("verOdontologos.jsp");
     }
 
     @Override
