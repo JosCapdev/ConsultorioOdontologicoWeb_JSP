@@ -36,7 +36,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Odontología
+                Gestión
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -90,7 +90,7 @@
             </li>
 
              <div class="sidebar-heading">
-                Secretaría
+                Odontologos
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->

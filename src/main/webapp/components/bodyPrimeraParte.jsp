@@ -36,7 +36,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Gestión
+                Odontología
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -89,6 +89,26 @@
                 </div>
             </li>
 
+             <div class="sidebar-heading">
+                Secretaría
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-hospital-user"></i>
+                    <span>Odontologos</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones</h6>
+                        <a class="collapse-item" href="SvOdontologo">Ver Odontologos</a>
+                        <a class="collapse-item" href="altaOdontologo.jsp">Alta Odontologos</a>
+                    </div>
+                </div>
+            </li>
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 

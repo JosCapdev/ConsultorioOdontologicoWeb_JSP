@@ -2,7 +2,6 @@ package Logica;
 
 import Persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,11 +9,11 @@ import java.util.List;
  * @author Jose
  */
 public class Controladora {
-    
+
     ControladoraPersistencia controlPers = new ControladoraPersistencia();
-    
-    public void crearUsuario(String nombre,String pass,String rol){
-        Usuario user = new Usuario(nombre,pass,rol);
+
+    public void crearUsuario(String nombre, String pass, String rol) {
+        Usuario user = new Usuario(nombre, pass, rol);
         controlPers.crearUser(user);
     }
 
@@ -35,19 +34,35 @@ public class Controladora {
     }
 
     public boolean comprobarIngreso(String user, String pass) {
-        boolean ingreso=false;
+        boolean ingreso = false;
         List<Usuario> listaUser = new ArrayList<Usuario>();
-        listaUser=controlPers.listarUsuarios();
+        listaUser = controlPers.listarUsuarios();
         for (Usuario usuario : listaUser) {
-            if(usuario.getNombreUsuario().equals(user)){
-                if(usuario.getContrasenia().equals(pass)){
+            if (usuario.getNombreUsuario().equals(user)) {
+                if (usuario.getContrasenia().equals(pass)) {
                     ingreso = true;
-                }else{
+                } else {
                     ingreso = false;
                 }
             }
         }
         return ingreso;
+    }
+
+    public boolean EsAdmin(String user, String pass) {
+        boolean adm = false;
+        List<Usuario> listaUser = new ArrayList<Usuario>();
+        listaUser = controlPers.listarUsuarios();
+        for (Usuario usuario : listaUser) {
+            if (usuario.getNombreUsuario().equals(user)) {
+                if (usuario.getContrasenia().equals(pass)) {
+                    if (usuario.getRol().equals("Administrador")) {
+                        adm = true;
+                    }
+                }
+            }
+        }
+        return adm;
     }
 
     public void crearOdonto(Odontologo odonto) {
