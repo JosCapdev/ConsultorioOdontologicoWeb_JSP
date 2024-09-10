@@ -26,7 +26,7 @@
 
             <!-- Nav Item - Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="index.jsp">
                     <i class="fas fa-solid fa-bars"></i>
                     <span>Menu</span></a>
             </li>
@@ -88,26 +88,6 @@
                     </div>
                 </div>
             </li>
-
-             <div class="sidebar-heading">
-                Secretaría
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-hospital-user"></i>
-                    <span>Odontologos</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Acciones</h6>
-                        <a class="collapse-item" href="SvOdontologo">Ver Odontologos</a>
-                        <a class="collapse-item" href="altaOdontologo.jsp">Alta Odontologos</a>
-                    </div>
-                </div>
-            </li>
             
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -162,5 +142,5 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Consultorio Odontologico</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Sistema de Gestión del Consultorio</h1>
                     </div>

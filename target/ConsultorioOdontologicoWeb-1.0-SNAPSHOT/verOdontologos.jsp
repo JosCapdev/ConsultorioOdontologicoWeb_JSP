@@ -5,12 +5,8 @@
 <%@include file="components/bodyPrimeraParte.jsp" %>
 
 <h1>Listado de Odontologos</h1>
-<p>Este es el apartado para listar odontologos del sistema</p>
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Ver Odontologos</h1>
     <p class="mb-4">A continuación podrá visualizar la lista completa de Odontologos</p>
 
     <!-- DataTales Example -->
