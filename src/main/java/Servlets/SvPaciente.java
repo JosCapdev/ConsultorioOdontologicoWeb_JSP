@@ -46,8 +46,7 @@ public class SvPaciente extends HttpServlet {
         String dir = request.getParameter("direccion");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
         String tipoSangre = request.getParameter("tipoSangre");
-        boolean obraS = request.getParameter("obraSocial").equals("obraSocial")? true : false;
-        System.out.println("obra social = "+obraS);
+        boolean obraS = request.getParameter("option").equals("si")? true : false;
         pac.setDni(dni);
         pac.setNombre(nombre);
         pac.setApellido(apell);

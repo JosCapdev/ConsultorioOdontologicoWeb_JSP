@@ -1,4 +1,5 @@
 Persistencia\exceptions\IllegalOrphanException.class
+Servlets\SvElimPacient.class
 Logica\Controladora.class
 Persistencia\exceptions\NonexistentEntityException.class
 Persistencia\ResponsableJpaController.class
@@ -18,6 +19,7 @@ Logica\Usuario.class
 Servlets\SvOdontologo.class
 Logica\Secretario.class
 Servlets\SvElimOdonto.class
+Servlets\SvEditPacient.class
 Persistencia\HorarioJpaController.class
 Logica\Usuario_.class
 Persistencia\SecretarioJpaController.class
@@ -33,4 +35,5 @@ Logica\Turno.class
 Logica\Horario_.class
 Persistencia\PersonaJpaController.class
 Logica\Responsable_.class
+Servlets\SvPaciente.class
 Servlets\SvEditOdonto.class

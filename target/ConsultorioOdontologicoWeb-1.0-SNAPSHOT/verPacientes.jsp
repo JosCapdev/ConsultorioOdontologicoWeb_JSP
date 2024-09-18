@@ -59,7 +59,7 @@
                             <td><%=pac.getDireccion()%></td>
                             <td><%=pac.getFechaNac()%></td>
                             <td><%=pac.getTipoSangre()%></td>
-                            <td><%=pac.isTieneOS()%></td>        
+                            <td><%=pac.isTieneOS()==true?"Si":"No"%></td>        
                             <td style="display:flex;width:230px;">
                                 <form name="eliminar" action="SvElimPacient" method="POST">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">

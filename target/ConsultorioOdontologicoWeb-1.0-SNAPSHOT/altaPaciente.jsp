@@ -35,7 +35,12 @@
                    placeholder="tipoSangre">
         </div>
         <div class="col-sm-6 mb-3">
-             <input type="radio" value="obraSocial" id="obraSocial" name="obraSocial"><label>Posee Obra Social</label>
+            <label>Posee Obra Social</label>
+            <br>
+            &nbsp&nbsp
+            <input type="radio" name="option" value="si" onclick="uncheckOthers(this)"> Si
+            &nbsp&nbsp
+            <input type="radio" name="option" value="no" onclick="uncheckOthers(this)"> No
         </div>
         
         <button class="btn btn-primary btn-user btn-block" type="submit">

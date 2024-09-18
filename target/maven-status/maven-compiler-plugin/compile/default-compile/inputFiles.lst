@@ -1,5 +1,7 @@
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Persistencia\PacienteJpaController.java
+C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvEditPacient.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Persistencia\PersonaJpaController.java
+C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvElimPacient.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvUsuarios.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvElimUsuario.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvEditUsuario.java
@@ -15,6 +17,7 @@ C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\jav
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Persistencia\ResponsableJpaController.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Persistencia\exceptions\PreexistingEntityException.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvElimOdonto.java
+C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvPaciente.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Persistencia\exceptions\NonexistentEntityException.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Persistencia\TurnoJpaController.java
 C:\Users\Jose\Documents\NetBeansProjects\ConsultorioOdontologicoWeb\src\main\java\Servlets\SvOdontologo.java
