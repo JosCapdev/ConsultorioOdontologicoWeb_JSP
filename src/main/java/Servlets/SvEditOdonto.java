@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "SvEditOdonto", urlPatterns = {"/SvEditOdonto"})
 public class SvEditOdonto extends HttpServlet {
- Controladora control = new Controladora();
+    Controladora control = new Controladora();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
@@ -21,7 +21,7 @@ public class SvEditOdonto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         int id = Integer.parseInt(request.getParameter("idOdont"));
+        int id = Integer.parseInt(request.getParameter("idOdont"));
         Odontologo odonto= control.traerOdonto(id);
         
         HttpSession miSession = request.getSession();

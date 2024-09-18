@@ -28,17 +28,18 @@ public class Paciente extends Persona implements Serializable{
         this.listaTurnos = listaTurnos;
     }
 
-    
+    public Paciente(boolean tieneOS, String tipoSangre, Responsable unResposable, String dni, String nombre, String apellido, String telefono, String direccion, Date fechaNac) {
+        super(dni, nombre, apellido, telefono, direccion, fechaNac);
+        this.tieneOS = tieneOS;
+        this.tipoSangre = tipoSangre;
+        this.unResposable = unResposable;
+    }
 
-
-
-//    public int getIdPaciente() {
-//        return idPaciente;
-//    }
-//
-//    public void setIdPaciente(int idPaciente) {
-//        this.idPaciente = idPaciente;
-//    }
+    public Paciente(boolean tieneOS, String tipoSangre, String dni, String nombre, String apellido, String telefono, String direccion, Date fechaNac) {
+        super(dni, nombre, apellido, telefono, direccion, fechaNac);
+        this.tieneOS = tieneOS;
+        this.tipoSangre = tipoSangre;
+    }
 
     public boolean isTieneOS() {
         return tieneOS;

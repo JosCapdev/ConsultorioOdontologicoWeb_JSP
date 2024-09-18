@@ -85,4 +85,24 @@ public class Controladora {
         controlPers.eliminarOdonto(id);
     }
 
+    public void crearPacient(Paciente pac) {
+        controlPers.crearPacient(pac);
+    }
+
+    public List<Paciente> getPacientes() {
+        return controlPers.listarPacientes();
+    }
+
+    public Paciente traerPacient(int id) {
+        return controlPers.traerPaciente(id);
+    }
+
+    public void editarPacient(Paciente pac) {
+        controlPers.editarPacient(pac);
+    }
+
+    public void eliminarPacient(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

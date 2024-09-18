@@ -1,11 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package Servlets;
 
 import Logica.Controladora;
-import Logica.Odontologo;
+import Logica.Paciente;
 import java.io.IOException;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,44 +15,55 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "SvOdontologo", urlPatterns = {"/SvOdontologo"})
-public class SvOdontologo extends HttpServlet {
+/**
+ *
+ * @author Jose
+ */
+@WebServlet(name = "SvEditPacient", urlPatterns = {"/SvEditPacient"})
+public class SvEditPacient extends HttpServlet {
     Controladora control = new Controladora();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
     }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       List<Odontologo> listaOdontologos = new ArrayList<Odontologo>();
-        listaOdontologos = control.getOdontologos();
+        int id = Integer.parseInt(request.getParameter("idPacient"));
+        Paciente pac= control.traerPacient(id);
+        
         HttpSession miSession = request.getSession();
-        miSession.setAttribute("listaOdonto", listaOdontologos);
-        response.sendRedirect("verOdontologos.jsp");
+        miSession.setAttribute("pacientEditar", pac);
+        response.sendRedirect("editarPaciente.jsp");
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Odontologo odonto = new Odontologo();
-        String dni = request.getParameter("dni");
+         String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
         String apell = request.getParameter("apellido");
         String tel = request.getParameter("telefono");
         String dir = request.getParameter("direccion");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
-        String espec = request.getParameter("especialidad");
-        odonto.setDni(dni);
-        odonto.setNombre(nombre);
-        odonto.setApellido(apell);
-        odonto.setTelefono(tel);
-        odonto.setDireccion(dir);
-        odonto.setFechaNac(fechN);
-        odonto.setEspecialidad(espec);
-        control.crearOdonto(odonto);
-        response.sendRedirect("index.jsp");
+        String tipoSangre = request.getParameter("tipoSangre");
+        boolean obraS = request.getParameter("obraSocial").equals("obraSocial")? true : false;
+        
+        Paciente pac = (Paciente) request.getSession().getAttribute("pacientEditar");
+        pac.setDni(dni);
+        pac.setNombre(nombre);
+        pac.setApellido(apell);
+        pac.setTelefono(tel);
+        pac.setDireccion(dir);
+        pac.setFechaNac(fechN);
+        pac.setTipoSangre(tipoSangre);
+        pac.setTieneOS(obraS);
+        
+        control.editarPacient(pac);
+        response.sendRedirect("SvPaciente");
     }
 
     @Override

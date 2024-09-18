@@ -1,7 +1,7 @@
 package Servlets;
 
 import Logica.Controladora;
-import Logica.Odontologo;
+import Logica.Paciente;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -13,43 +13,50 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "SvOdontologo", urlPatterns = {"/SvOdontologo"})
-public class SvOdontologo extends HttpServlet {
+/**
+ *
+ * @author Jose
+ */
+@WebServlet(name = "SvPaciente", urlPatterns = {"/SvPaciente"})
+public class SvPaciente extends HttpServlet {
     Controladora control = new Controladora();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       List<Odontologo> listaOdontologos = new ArrayList<Odontologo>();
-        listaOdontologos = control.getOdontologos();
+        List<Paciente> listaPacientes = new ArrayList<Paciente>();
+        listaPacientes = control.getPacientes();
         HttpSession miSession = request.getSession();
-        miSession.setAttribute("listaOdonto", listaOdontologos);
-        response.sendRedirect("verOdontologos.jsp");
+        miSession.setAttribute("listaPac", listaPacientes);
+        response.sendRedirect("verPacientes.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Odontologo odonto = new Odontologo();
+        Paciente pac = new Paciente();
         String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
         String apell = request.getParameter("apellido");
         String tel = request.getParameter("telefono");
         String dir = request.getParameter("direccion");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
-        String espec = request.getParameter("especialidad");
-        odonto.setDni(dni);
-        odonto.setNombre(nombre);
-        odonto.setApellido(apell);
-        odonto.setTelefono(tel);
-        odonto.setDireccion(dir);
-        odonto.setFechaNac(fechN);
-        odonto.setEspecialidad(espec);
-        control.crearOdonto(odonto);
+        String tipoSangre = request.getParameter("tipoSangre");
+        boolean obraS = request.getParameter("obraSocial").equals("obraSocial")? true : false;
+        System.out.println("obra social = "+obraS);
+        pac.setDni(dni);
+        pac.setNombre(nombre);
+        pac.setApellido(apell);
+        pac.setTelefono(tel);
+        pac.setDireccion(dir);
+        pac.setFechaNac(fechN);
+        pac.setTipoSangre(tipoSangre);
+        pac.setTieneOS(obraS);
+        control.crearPacient(pac);
         response.sendRedirect("index.jsp");
     }
 
