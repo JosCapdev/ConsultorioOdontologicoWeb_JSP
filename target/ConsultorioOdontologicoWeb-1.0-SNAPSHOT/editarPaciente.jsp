@@ -42,7 +42,7 @@
                    placeholder="Obra Social" value="<%=pac.isTieneOS()%>">
         </div>
         <button class="btn btn-primary btn-user btn-block" type="submit">
-            Modificar Odontologo
+            Modificar Paciente
         </button>
 </form>
 

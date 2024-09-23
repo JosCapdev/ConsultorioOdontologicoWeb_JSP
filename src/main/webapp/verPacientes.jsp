@@ -1,3 +1,5 @@
+<%@page import="java.time.ZoneId"%>
+<%@page import="java.time.LocalDate"%>
 <%@page import="Logica.Paciente"%>
 <%@page import="Logica.Odontologo"%>
 <%@page import="java.util.List"%>
@@ -48,16 +50,16 @@
                     <% 
                         List<Paciente>listaPaciente=(List)request.getSession().getAttribute("listaPac");
                     %>
-                    <tbody>
+                    
                         <% for (Paciente pac : listaPaciente){ %>
-                        <tr>
+                            <%LocalDate fech= pac.getFechaNac().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();%>
                             <td><%=pac.getId()%></td>
                             <td><%=pac.getDni()%></td>
                             <td><%=pac.getNombre()%></td>
                             <td><%=pac.getApellido()%></td>
                             <td><%=pac.getTelefono()%></td>
                             <td><%=pac.getDireccion()%></td>
-                            <td><%=pac.getFechaNac()%></td>
+                            <td><%=fech.getDayOfMonth()+"/"+fech.getMonthValue()+"/"+fech.getYear()%></td>
                             <td><%=pac.getTipoSangre()%></td>
                             <td><%=pac.isTieneOS()==true?"Si":"No"%></td>        
                             <td style="display:flex;width:230px;">
@@ -75,9 +77,9 @@
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
                             </td>
-                        </tr>
+                        
                         <% } %>
-                    </tbody>
+                    
                 </table>
             </div>
         </div>

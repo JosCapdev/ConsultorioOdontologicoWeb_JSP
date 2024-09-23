@@ -26,14 +26,12 @@ public class SvUsuarios extends HttpServlet {
         listaUsuarios = control.getUsuarios();
         HttpSession miSession = request.getSession();
         miSession.setAttribute("listaUser", listaUsuarios);
-        System.out.println("lista: "+listaUsuarios);
         response.sendRedirect("verUsuarios.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         String nombreUsuario = request.getParameter("nombreUser");
         String pass = request.getParameter("pass");
         String rol = request.getParameter("rol");

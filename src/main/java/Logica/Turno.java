@@ -1,4 +1,3 @@
-
 package Logica;
 
 import java.io.Serializable;
@@ -14,18 +13,19 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Turno implements Serializable {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTurno;
     @Temporal(TemporalType.DATE)
     private Date fechaTurno;
     private String horaTurno;
     private String afeccion;
     @ManyToOne
-    @JoinColumn(name="idOdontologo")
+    @JoinColumn(name = "idOdontologo")
     private Odontologo odont;
     @ManyToOne
-    @JoinColumn(name="idPaciente")
+    @JoinColumn(name = "idPaciente")
     private Paciente pacient;
 
     public Turno() {
@@ -36,6 +36,23 @@ public class Turno implements Serializable {
         this.fechaTurno = fechaTurno;
         this.horaTurno = horaTurno;
         this.afeccion = afeccion;
+    }
+
+    public Turno(Date fechaTurno, String horaTurno, String afeccion, Odontologo odont, Paciente pacient) {
+        this.fechaTurno = fechaTurno;
+        this.horaTurno = horaTurno;
+        this.afeccion = afeccion;
+        this.odont = odont;
+        this.pacient = pacient;
+    }
+
+    public Turno(int idTurno, Date fechaTurno, String horaTurno, String afeccion, Odontologo odont, Paciente pacient) {
+        this.idTurno = idTurno;
+        this.fechaTurno = fechaTurno;
+        this.horaTurno = horaTurno;
+        this.afeccion = afeccion;
+        this.odont = odont;
+        this.pacient = pacient;
     }
 
     public int getIdTurno() {
@@ -69,5 +86,21 @@ public class Turno implements Serializable {
     public void setAfeccion(String afeccion) {
         this.afeccion = afeccion;
     }
-    
+
+    public Odontologo getOdont() {
+        return odont;
+    }
+
+    public void setOdont(Odontologo odont) {
+        this.odont = odont;
+    }
+
+    public Paciente getPacient() {
+        return pacient;
+    }
+
+    public void setPacient(Paciente pacient) {
+        this.pacient = pacient;
+    }
+
 }

@@ -2,8 +2,8 @@
 <body id="page-top">
     <!-- Validacion Sesión -->
     <% HttpSession misesion = request.getSession();
-       String usuario = (String) request.getSession().getAttribute("usuario");
-       if(usuario==null){
+        String usuario = (String) request.getSession().getAttribute("usuario");
+        if (usuario == null) {
             response.sendRedirect("sinLogin.jsp");
         }
     %>   
@@ -36,13 +36,13 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Odontología
+                Administración
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                   aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-hospital-user"></i>
                     <span>Odontologos</span>
                 </a>
@@ -58,12 +58,12 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                   aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-solid fa-users"></i>
                     <span>Pacientes</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones</h6>
                         <a class="collapse-item" href="SvPaciente">Ver Pacientes</a>
@@ -71,16 +71,16 @@
                     </div>
                 </div>
             </li>
-            
-                        <!-- Nav Item - Utilities Collapse Menu -->
+
+            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                   aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-solid fa-users"></i>
                     <span>Usuarios</span>
                 </a>
                 <div id="collapseUsers" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones</h6>
                         <a class="collapse-item" href="SvUsuarios">Ver Usuarios</a>
@@ -88,7 +88,61 @@
                     </div>
                 </div>
             </li>
-            
+
+            <div class="sidebar-heading">
+                Gestión
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTurno"
+                   aria-expanded="true" aria-controls="collapseTurno">
+                    <i class="fas fa-hospital-user"></i>
+                    <span>Turnos</span>
+                </a>
+                <div id="collapseTurno" class="collapse" aria-labelledby="headingTurno" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones</h6>
+                        <a class="collapse-item" href="SvTurnos">Ver Turnos</a>
+                        <a class="collapse-item" href="altaTurno.jsp">Crear Turno</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                   aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-solid fa-users"></i>
+                    <span>Pacientes</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones</h6>
+                        <a class="collapse-item" href="SvPaciente">Ver Pacientes</a>
+                        <a class="collapse-item" href="altaPaciente.jsp">Alta Pacientes</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
+                   aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-solid fa-users"></i>
+                    <span>Usuarios</span>
+                </a>
+                <div id="collapseUsers" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones</h6>
+                        <a class="collapse-item" href="SvUsuarios">Ver Usuarios</a>
+                        <a class="collapse-item" href="altaUsuario.jsp">Alta Usuarios</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -109,21 +163,21 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                  
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=request.getSession().getAttribute("usuario")%></span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                     src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                                 aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

@@ -1,6 +1,7 @@
 package Logica;
 
 import Persistencia.ControladoraPersistencia;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,7 +103,16 @@ public class Controladora {
     }
 
     public void eliminarPacient(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        controlPers.eliminarPacient(id);
     }
+
+    public List<Turno> getTurnos() {
+        return controlPers.listarTurnos();
+    }
+
+    public void crearTurno(Turno turn) {
+        controlPers.crearTurno(turn);
+    }
+
 
 }
