@@ -15,16 +15,18 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "SvOdontologo", urlPatterns = {"/SvOdontologo"})
 public class SvOdontologo extends HttpServlet {
+
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       List<Odontologo> listaOdontologos = new ArrayList<Odontologo>();
+        List<Odontologo> listaOdontologos = new ArrayList<Odontologo>();
         listaOdontologos = control.getOdontologos();
         HttpSession miSession = request.getSession();
         miSession.setAttribute("listaOdonto", listaOdontologos);

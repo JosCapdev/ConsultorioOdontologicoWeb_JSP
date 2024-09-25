@@ -73,5 +73,10 @@ public class Paciente extends Persona implements Serializable{
         this.listaTurnos = listaTurnos;
     }
 
+    @Override
+    public String toString() {
+        return "Paciente{" + "tieneOS=" + tieneOS + ", tipoSangre=" + tipoSangre + ", unResposable=" + unResposable + ", listaTurnos=" + listaTurnos + '}';
+    }
+
 
 }

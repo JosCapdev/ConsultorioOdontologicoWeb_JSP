@@ -103,7 +103,7 @@
                 <div id="collapseTurno" class="collapse" aria-labelledby="headingTurno" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones</h6>
-                        <a class="collapse-item" href="SvTurnos">Ver Turnos</a>
+                        <a class="collapse-item" href="SvTurno">Ver Turnos</a>
                         <a class="collapse-item" href="altaTurno.jsp">Crear Turno</a>
                     </div>
                 </div>

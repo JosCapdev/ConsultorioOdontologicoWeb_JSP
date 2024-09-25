@@ -17,15 +17,6 @@ public class Responsable extends Persona{
         this.tipoResp = tipoResp;
     }
 
-   
-//    public int getIdResponsable() {
-//        return idResponsable;
-//    }
-//
-//    public void setIdResponsable(int idResponsable) {
-//        this.idResponsable = idResponsable;
-//    }
-
     public String getTipoResp() {
         return tipoResp;
     }

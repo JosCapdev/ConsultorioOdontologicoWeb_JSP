@@ -3,6 +3,7 @@
 <%@page import="Logica.Paciente"%>
 <%@page import="Logica.Odontologo"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp"%>
 <%@include file="components/bodyPrimeraParte.jsp" %>
@@ -51,8 +52,9 @@
                         List<Paciente>listaPaciente=(List)request.getSession().getAttribute("listaPac");
                     %>
                     
-                        <% for (Paciente pac : listaPaciente){ %>
-                            <%LocalDate fech= pac.getFechaNac().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();%>
+                        <% for (Paciente pac : listaPaciente){
+                          System.out.println("paciente x :"+pac.getNombre());
+                                LocalDate fech= pac.getFechaNac().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();%>
                             <td><%=pac.getId()%></td>
                             <td><%=pac.getDni()%></td>
                             <td><%=pac.getNombre()%></td>
@@ -63,9 +65,10 @@
                             <td><%=pac.getTipoSangre()%></td>
                             <td><%=pac.isTieneOS()==true?"Si":"No"%></td>        
                             <td style="display:flex;width:230px;">
-                                <form name="eliminar" action="SvElimPacient" method="POST">
-                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">
-                                        <i class="fas fa-trash-alt"></i> Eliminar   
+                                
+                                <form name="editar" action="SvEditPacient" method="GET">
+                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
+                                        <i class="fas fa-pencil-alt"></i> Turno   
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
@@ -76,6 +79,14 @@
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
+                                
+                                <form name="eliminar" action="SvElimPacient" method="POST">
+                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">
+                                        <i class="fas fa-trash-alt"></i> Eliminar   
+                                    </button>
+                                    <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
+                                </form>
+                                
                             </td>
                         
                         <% } %>

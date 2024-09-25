@@ -1,14 +1,17 @@
+<%@page import="Logica.Controladora"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Logica.Odontologo"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp"%>
 <%@include file="components/bodyPrimeraParte.jsp" %>
 
 <h1>Crear Turno</h1>
-<p>Esto es una prueba</p>
+<p>Rellenar datos del turno</p>
 <form class="user" action="SvPaciente" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="fechaTurn" name="fechaTurn" 
-                   placeholder="Fecha del Turno YYYY-MM-DD">
+            <input type="date" class="form-control form-control-user" id="fecha" name="fecha">
         </div>
         <div class="col-sm-6 mb-3">
             <select class="form-control form-control" name="horarios" id="horarios">>
@@ -30,8 +33,16 @@
                    placeholder="Afección">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="telefono" name="telefono"
-                   placeholder="Teléfono">
+            <select class="form-control form-control" name="odontos" id="odontos">>
+                <option value="" disabled selected>Odontologos</option>
+                <% Controladora control = new Controladora();
+                   List<Odontologo> listaOdontologos = new ArrayList<Odontologo>();
+                   listaOdontologos = control.getOdontologos();
+                   for (Odontologo odonto : listaOdontologos){
+                %>
+                <option value=<%=odonto.getId()%>><%=odonto.getId()+" "+odonto.getApellido()+" "+odonto.getNombre()%></option>
+                <% } %>
+            </select>
         </div>
 
         <button class="btn btn-primary btn-user btn-block" type="submit">
