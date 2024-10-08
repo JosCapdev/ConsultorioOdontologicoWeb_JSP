@@ -31,7 +31,7 @@
                    placeholder="Fecha Nacimiento" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}">
         </div>
         <div class="col-sm-6 mb-3">
-            <select class="form-control form-control" name="tipoSangre" id="tipoSangre">>
+            <select class="form-control form-control" name="tipoSangre" id="tipoSangre">
                 <option value="" disabled selected>Tipo de Sangre</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>

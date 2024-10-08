@@ -1,14 +1,11 @@
-<%@page import="java.time.ZoneId"%>
-<%@page import="java.time.LocalDate"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="Logica.Paciente"%>
-<%@page import="Logica.Odontologo"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp"%>
 <%@include file="components/bodyPrimeraParte.jsp" %>
 
-<h1>Listado de Pacientes</h1>
+<h1>Listado de Odontologos</h1>
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <p class="mb-4">A continuación podrá visualizar la lista completa de Pacientes</p>
@@ -32,7 +29,6 @@
                             <th>Fecha Nac.</th>
                             <th>Tipo de Sangre</th>
                             <th>Obra Social</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -48,25 +44,23 @@
                             <th>Obra Social</th>
                         </tr>
                     </tfoot>
-                    <% 
-                        List<Paciente>listaPaciente=(List)request.getSession().getAttribute("listaPac");
+                    <%    List<Paciente> listaPacientes = (List) request.getSession().getAttribute("listaPac");
+                          SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
                     %>
-                    
-                        <% for (Paciente pac : listaPaciente){
-                          System.out.println("paciente x :"+pac.getNombre());
-                                LocalDate fech= pac.getFechaNac().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();%>
+                    <tbody>
+                        <% for (Paciente pac : listaPacientes) {%>
+                        <tr>
                             <td><%=pac.getId()%></td>
                             <td><%=pac.getDni()%></td>
                             <td><%=pac.getNombre()%></td>
                             <td><%=pac.getApellido()%></td>
                             <td><%=pac.getTelefono()%></td>
                             <td><%=pac.getDireccion()%></td>
-                            <td><%=fech.getDayOfMonth()+"/"+fech.getMonthValue()+"/"+fech.getYear()%></td>
-                            <td><%=pac.getTipoSangre()%></td>
-                            <td><%=pac.isTieneOS()==true?"Si":"No"%></td>        
+                            <td><%=formato.format(pac.getFechaNac())%></td>
+                            <td><%=pac.getTipoSangre()%></td>  
+                            <td><%=pac.isTieneOS() == true ? "Si" : "No"%></td> 
                             <td style="display:flex;width:230px;">
-                                
-                                <form name="editar" action="SvEditPacient" method="GET">
+                                <form name="editar" action="altaTurno.jsp" method="GET">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
                                         <i class="fas fa-pencil-alt"></i> Turno   
                                     </button>
@@ -86,11 +80,10 @@
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
-                                
                             </td>
-                        
-                        <% } %>
-                    
+                        </tr>
+                        <% }%>
+                    </tbody>
                 </table>
             </div>
         </div>

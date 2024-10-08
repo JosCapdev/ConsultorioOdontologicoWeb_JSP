@@ -1,5 +1,6 @@
 Persistencia\exceptions\IllegalOrphanException.class
 Servlets\SvElimPacient.class
+Servlets\SvTurno.class
 Logica\Controladora.class
 Persistencia\exceptions\NonexistentEntityException.class
 Persistencia\ResponsableJpaController.class

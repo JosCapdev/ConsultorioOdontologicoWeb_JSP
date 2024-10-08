@@ -45,12 +45,12 @@ public class SvEditPacient extends HttpServlet {
             throws ServletException, IOException {
          String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
-        String apell = request.getParameter("apellido");
-        String tel = request.getParameter("telefono");
-        String dir = request.getParameter("direccion");
+        String apell = request.getParameter("apell");
+        String tel = request.getParameter("telf");
+        String dir = request.getParameter("direc");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
         String tipoSangre = request.getParameter("tipoSangre");
-        boolean obraS = request.getParameter("obraSocial").equals("obraSocial")? true : false;
+        boolean obraS = request.getParameter("option").equals("si")? true : false;
         
         Paciente pac = (Paciente) request.getSession().getAttribute("pacientEditar");
         pac.setDni(dni);
