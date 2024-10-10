@@ -11,7 +11,7 @@
 <form class="user" action="SvPaciente" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <input type="date" class="form-control form-control-user" id="fecha" name="fecha">
+            <input type="date" class="form-control form-control" id="fecha" name="fecha">
         </div>
         <div class="col-sm-6 mb-3">
             <select class="form-control form-control" name="horarios" id="horarios">>
@@ -29,7 +29,7 @@
             </select>
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="afeccion" name="afeccion"
+            <input type="text" class="form-control form-control" id="afeccion" name="afeccion"
                    placeholder="Afección">
         </div>
         <div class="col-sm-6 mb-3">

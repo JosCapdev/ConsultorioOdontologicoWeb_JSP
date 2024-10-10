@@ -72,6 +72,38 @@
                 </div>
             </li>
 
+             <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseResp"
+                   aria-expanded="true" aria-controls="collapseResp">
+                    <i class="fas fa-hospital-user"></i>
+                    <span>Adulto Responsable</span>
+                </a>
+                <div id="collapseResp" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones</h6>
+                        <a class="collapse-item" href="SvResponsable">Ver Responsable</a>
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSecretario"
+                   aria-expanded="true" aria-controls="collapseSecretario">
+                    <i class="fas fa-solid fa-users"></i>
+                    <span>Secretarios</span>
+                </a>
+                <div id="collapseSecretario" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones</h6>
+                        <a class="collapse-item" href="SvPaciente">Ver Secretarios</a>
+                        <a class="collapse-item" href="altaPaciente.jsp">Alta Secretario</a>
+                    </div>
+                </div>
+            </li>
+            
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
@@ -105,40 +137,6 @@
                         <h6 class="collapse-header">Acciones</h6>
                         <a class="collapse-item" href="SvTurno">Ver Turnos</a>
                         <a class="collapse-item" href="altaTurno.jsp">Crear Turno</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                   aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-solid fa-users"></i>
-                    <span>Pacientes</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                     data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Acciones</h6>
-                        <a class="collapse-item" href="SvPaciente">Ver Pacientes</a>
-                        <a class="collapse-item" href="altaPaciente.jsp">Alta Pacientes</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
-                   aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-solid fa-users"></i>
-                    <span>Usuarios</span>
-                </a>
-                <div id="collapseUsers" class="collapse" aria-labelledby="headingUtilities"
-                     data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Acciones</h6>
-                        <a class="collapse-item" href="SvUsuarios">Ver Usuarios</a>
-                        <a class="collapse-item" href="altaUsuario.jsp">Alta Usuarios</a>
                     </div>
                 </div>
             </li>
@@ -198,3 +196,4 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Sistema de Gestión del Consultorio</h1>
                     </div>
+                    
