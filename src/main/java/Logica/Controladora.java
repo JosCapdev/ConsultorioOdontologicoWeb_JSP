@@ -113,6 +113,30 @@ public class Controladora {
     public void crearTurno(Turno turn) {
         controlPers.crearTurno(turn);
     }
+    
+    public void eliminarTurno(int id) {
+        controlPers.eliminarTurno(id);
+    }
+
+    public List<Secretario> getSecretarios() {
+        return controlPers.listarSecretarios();
+    }
+
+    public void crearSec(Secretario sec) {
+        controlPers.crearSecretario(sec);
+    }
+
+    public Secretario traerSec(int id) {
+        return controlPers.traerSec(id);
+    }
+
+    public void editarSec(Secretario sec) {
+        controlPers.editarSec(sec);
+    }
+
+    public void eliminarSec(int id) {
+        controlPers.eliminarSec(id);
+    }
 
 
 }

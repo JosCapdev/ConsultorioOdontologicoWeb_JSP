@@ -34,16 +34,6 @@ public class Odontologo extends Persona implements Serializable {
         this.especialidad = especialidad;
     }
 
-    
-
-//    public int getIdOdontologo() {
-//        return idOdontologo;
-//    }
-//
-//    public void setIdOdontologo(int idOdontologo) {
-//        this.idOdontologo = idOdontologo;
-//    }
-
     public String getEspecialidad() {
         return especialidad;
     }

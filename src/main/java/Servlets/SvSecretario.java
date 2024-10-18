@@ -1,7 +1,7 @@
 package Servlets;
 
 import Logica.Controladora;
-import Logica.Paciente;
+import Logica.Secretario;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -17,47 +17,49 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jose
  */
-@WebServlet(name = "SvPaciente", urlPatterns = {"/SvPaciente"})
-public class SvPaciente extends HttpServlet {
+@WebServlet(name = "SvSecretario", urlPatterns = {"/SvSecretario"})
+public class SvSecretario extends HttpServlet {
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
     }
 
+ 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Paciente> listaPacientes = new ArrayList<Paciente>();
-        listaPacientes = control.getPacientes();
+        List<Secretario> listaSecretarios = new ArrayList<Secretario>();
+        listaSecretarios = control.getSecretarios();
         HttpSession miSession = request.getSession();
-        miSession.setAttribute("listaPac", listaPacientes);
-        response.sendRedirect("verPacientes.jsp");
+        miSession.setAttribute("listaSec", listaSecretarios);
+        response.sendRedirect("verSecretarios.jsp");
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Paciente pac = new Paciente();
+        Secretario sec = new Secretario();
         String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
         String apell = request.getParameter("apellido");
         String tel = request.getParameter("telefono");
         String dir = request.getParameter("direccion");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
-        String tipoSangre = request.getParameter("tipoSangre");
-        boolean obraS = request.getParameter("option").equals("si")? true : false;
-        pac.setDni(dni);
-        pac.setNombre(nombre);
-        pac.setApellido(apell);
-        pac.setTelefono(tel);
-        pac.setDireccion(dir);
-        pac.setFechaNac(fechN);
-        pac.setTipoSangre(tipoSangre);
-        pac.setTieneOS(obraS);
-        control.crearPacient(pac);
+        String sector = request.getParameter("sector");
+        sec.setDni(dni);
+        sec.setNombre(nombre);
+        sec.setApellido(apell);
+        sec.setTelefono(tel);
+        sec.setDireccion(dir);
+        sec.setFechaNac(fechN);
+        sec.setSector(sector);
+        control.crearSec(sec);
         response.sendRedirect("index.jsp");
     }
+
 
     @Override
     public String getServletInfo() {

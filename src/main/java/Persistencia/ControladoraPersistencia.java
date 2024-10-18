@@ -6,6 +6,7 @@ package Persistencia;
 
 import Logica.Odontologo;
 import Logica.Paciente;
+import Logica.Secretario;
 import Logica.Turno;
 import Logica.Usuario;
 import Persistencia.exceptions.NonexistentEntityException;
@@ -122,7 +123,41 @@ public class ControladoraPersistencia {
         turnoJpa.create(turn);
     }
 
-
+    public void eliminarTurno(int id) {
+        try {
+            turnoJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
+    public List<Secretario> listarSecretarios() {
+        return secretarioJpa.findSecretarioEntities();
+    }
+
+    public void crearSecretario(Secretario sec) {
+        secretarioJpa.create(sec);
+    }
+
+    public Secretario traerSec(int id) {
+        return secretarioJpa.findSecretario(id);
+    }
+
+    public void editarSec(Secretario sec) {
+        try {
+            secretarioJpa.edit(sec);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void eliminarSec(int id) {
+        try {
+            secretarioJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
 
 }
