@@ -3,7 +3,7 @@
 <%@include file="components/bodyPrimeraParte.jsp" %>
 
 <h1>Alta Odontologos</h1>
-<p>Esto es una prueba</p>
+<p>Aqui podras rellenar campos y dar de alta un Odontologo</p>
 <form class="user" action="SvOdontologo" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">

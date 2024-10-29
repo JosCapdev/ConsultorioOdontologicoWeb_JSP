@@ -43,7 +43,7 @@ public class SvEditPacient extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String dni = request.getParameter("dni");
+        String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
         String apell = request.getParameter("apell");
         String tel = request.getParameter("telf");
