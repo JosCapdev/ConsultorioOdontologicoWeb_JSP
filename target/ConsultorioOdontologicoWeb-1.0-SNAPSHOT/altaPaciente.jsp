@@ -1,3 +1,4 @@
+<%@page import="java.sql.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp"%>
 <%@include file="components/bodyPrimeraParte.jsp" %>
@@ -51,7 +52,6 @@
             &nbsp&nbsp
             <input type="radio" name="option" value="no" onclick="uncheckOthers(this)"> No
         </div>
-        
         <button class="btn btn-primary btn-user btn-block" type="submit">
             Crear Paciente
         </button>

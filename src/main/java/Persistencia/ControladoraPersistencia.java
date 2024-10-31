@@ -6,6 +6,7 @@ package Persistencia;
 
 import Logica.Odontologo;
 import Logica.Paciente;
+import Logica.Responsable;
 import Logica.Secretario;
 import Logica.Turno;
 import Logica.Usuario;
@@ -154,6 +155,26 @@ public class ControladoraPersistencia {
     public void eliminarSec(int id) {
         try {
             secretarioJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Responsable traerResponsable(int id) {
+        return respJpa.findResponsable(id);
+    }
+
+    public List<Responsable> listarResponsables() {
+        return respJpa.findResponsableEntities();
+    }
+
+    public void crearResponsable(Responsable resp) {
+        respJpa.create(resp);
+    }
+
+    public void eliminarResp(int id) {
+        try {
+            respJpa.destroy(id);
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }

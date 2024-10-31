@@ -45,7 +45,7 @@
                         </tr>
                     </tfoot>
                     <%    List<Paciente> listaPacientes = (List) request.getSession().getAttribute("listaPac");
-                          SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+                        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
                     %>
                     <tbody>
                         <% for (Paciente pac : listaPacientes) {%>
@@ -66,14 +66,22 @@
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
-                                
+                                <%if (pac.getUnResposable() != null) {%>
+                                <form name="editar" action="SvResponsableBuscar" method="GET">
+                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white; background-color: #28a745; margin-left: 5px;">
+                                        <i class="fas fa-pencil-alt"></i> AdultR   
+                                    </button>
+                                    <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
+                                </form>
+                                <% };%>
+
                                 <form name="editar" action="SvEditPacient" method="GET">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
                                         <i class="fas fa-pencil-alt"></i> Editar   
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
-                                
+
                                 <form name="eliminar" action="SvElimPacient" method="POST">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">
                                         <i class="fas fa-trash-alt"></i> Eliminar   

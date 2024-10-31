@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package Servlets;
 
 import Logica.Controladora;
+import Logica.Paciente;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,6 +34,11 @@ public class SvElimPacient extends HttpServlet {
             throws ServletException, IOException {
         
         int id = Integer.parseInt(request.getParameter("idPacient"));
+        Paciente pac = control.traerPacient(id);
+        int idResp = pac.getUnResposable().getId();
+        if(idResp!=0){
+            control.eliminarResp(idResp);
+        }
         control.eliminarPacient(id);
         response.sendRedirect("SvPaciente");
    

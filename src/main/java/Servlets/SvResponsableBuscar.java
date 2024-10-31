@@ -1,6 +1,7 @@
 package Servlets;
 
 import Logica.Controladora;
+import Logica.Paciente;
 import Logica.Responsable;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -27,9 +28,11 @@ public class SvResponsableBuscar extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("idPacient"));
-        Responsable resp= control.traerResponsable(id);
-        
+        Paciente pac = control.traerPacient(id);
+        Responsable resp= pac.getUnResposable();
+        String pacienteDatos = pac.getNombre()+" "+pac.getApellido()+" "+pac.getDni();
         HttpSession miSession = request.getSession();
+        miSession.setAttribute("pacientBuscar", pacienteDatos);
         miSession.setAttribute("respBuscar", resp);
         response.sendRedirect("verResponsableDelPaciente.jsp");
     }

@@ -1,7 +1,6 @@
 package Logica;
 
 import Persistencia.ControladoraPersistencia;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,7 +138,19 @@ public class Controladora {
     }
 
     public Responsable traerResponsable(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         return controlPers.traerResponsable(id);
+    }
+
+    public List<Responsable> getResponsables() {
+        return controlPers.listarResponsables();
+    }
+
+    public void crearResp(Responsable resp) {
+        controlPers.crearResponsable(resp);
+    }
+
+    public void eliminarResp(int id) {
+        controlPers.eliminarResp(id);
     }
 
 

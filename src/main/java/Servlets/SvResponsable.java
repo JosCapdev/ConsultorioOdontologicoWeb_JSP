@@ -2,12 +2,10 @@ package Servlets;
 
 import Logica.Controladora;
 import Logica.Paciente;
+import Logica.Responsable;
 import java.io.IOException;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,59 +18,52 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jose
  */
-@WebServlet(name = "SvPaciente", urlPatterns = {"/SvPaciente"})
-public class SvPaciente extends HttpServlet {
+@WebServlet(name = "SvResponsable", urlPatterns = {"/SvResponsable"})
+public class SvResponsable extends HttpServlet {
     Controladora control = new Controladora();
+  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Paciente> listaPacientes = new ArrayList<Paciente>();
-        listaPacientes = control.getPacientes();
+         List<Responsable> listaResponsables = new ArrayList<Responsable>();
+        listaResponsables = control.getResponsables();
         HttpSession miSession = request.getSession();
-        miSession.setAttribute("listaPac", listaPacientes);
-        response.sendRedirect("verPacientes.jsp");
+        miSession.setAttribute("listaResp", listaResponsables);
+        response.sendRedirect("verResponsables.jsp");
     }
 
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Paciente pac = new Paciente();
+        Responsable resp = new Responsable();
         String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
         String apell = request.getParameter("apellido");
         String tel = request.getParameter("telefono");
         String dir = request.getParameter("direccion");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
-        String tipoSangre = request.getParameter("tipoSangre");
-        boolean obraS = request.getParameter("option").equals("si")? true : false;
-        pac.setDni(dni);
-        pac.setNombre(nombre);
-        pac.setApellido(apell);
-        pac.setTelefono(tel);
-        pac.setDireccion(dir);
-        pac.setFechaNac(fechN);
-        pac.setTipoSangre(tipoSangre);
-        pac.setTieneOS(obraS);
+        String tipoResp = request.getParameter("parentesco");
+        resp.setDni(dni);
+        resp.setNombre(nombre);
+        resp.setApellido(apell);
+        resp.setTelefono(tel);
+        resp.setDireccion(dir);
+        resp.setFechaNac(fechN);
+        resp.setTipoResp(tipoResp);
+        control.crearResp(resp);
         
-        LocalDate fechaNacComp = fechN.toLocalDate();
-        LocalDate fechaActual = LocalDate.now();
-        Period periodo = Period.between(fechaNacComp, fechaActual);
-        if(periodo.getYears()>=18){
+        Paciente pac = (Paciente) request.getSession().getAttribute("pacConResp");
+        pac.setUnResposable(resp);
         control.crearPacient(pac);
         response.sendRedirect("index.jsp");
-        }else{
-            HttpSession miSession = request.getSession();
-            miSession.setAttribute("pacConResp", pac);
-            response.sendRedirect("altaResponsable.jsp");
-        }
-        
     }
 
+  
     @Override
     public String getServletInfo() {
         return "Short description";
