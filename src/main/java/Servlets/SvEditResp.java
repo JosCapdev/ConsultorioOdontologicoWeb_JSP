@@ -1,7 +1,7 @@
 package Servlets;
 
 import Logica.Controladora;
-import Logica.Secretario;
+import Logica.Responsable;
 import java.io.IOException;
 import java.sql.Date;
 import javax.servlet.ServletException;
@@ -15,25 +15,26 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jose
  */
-@WebServlet(name = "SvEditSec", urlPatterns = {"/SvEditSec"})
-public class SvEditSec extends HttpServlet {
-    Controladora control = new Controladora();   
+@WebServlet(name = "SvEditResp", urlPatterns = {"/SvEditResp"})
+public class SvEditResp extends HttpServlet {
+    Controladora control = new Controladora();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {   
     }
 
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("idSec"));
-        Secretario sec= control.traerSec(id);
+        int id = Integer.parseInt(request.getParameter("idResp"));
+        Responsable resp= control.traerResponsable(id);
         
         HttpSession miSession = request.getSession();
-        miSession.setAttribute("secEditar", sec);
-        response.sendRedirect("editarSecretario.jsp");
+        miSession.setAttribute("respEditar", resp);
+        response.sendRedirect("editarResp.jsp");
     }
 
-   
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -43,19 +44,19 @@ public class SvEditSec extends HttpServlet {
         String tel = request.getParameter("telf");
         String dir = request.getParameter("direc");
         Date fechN = Date.valueOf(request.getParameter("fechNac"));
-        String sector = request.getParameter("sector");
+        String tipoResp = request.getParameter("parentesco");
         
-        Secretario sec =(Secretario)request.getSession().getAttribute("secEditar");
-        sec.setDni(dni);
-        sec.setNombre(nombre);
-        sec.setApellido(apell);
-        sec.setTelefono(tel);
-        sec.setDireccion(dir);
-        sec.setFechaNac(fechN);
-        sec.setSector(sector);
+        Responsable resp =(Responsable)request.getSession().getAttribute("respEditar");
+        resp.setDni(dni);
+        resp.setNombre(nombre);
+        resp.setApellido(apell);
+        resp.setTelefono(tel);
+        resp.setDireccion(dir);
+        resp.setFechaNac(fechN);
+        resp.setTipoResp(tipoResp);
         
-        control.editarSec(sec);
-        response.sendRedirect("SvSecretario");
+        control.editarResp(resp);
+        response.sendRedirect("verResponsableDelPaciente.jsp");
     }
 
     

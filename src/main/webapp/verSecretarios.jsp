@@ -1,10 +1,11 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="Logica.Secretario"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp"%>
 <%@include file="components/bodyPrimeraParte.jsp" %>
 
-<h1>Listado de Secretarios/h1>
+<h1>Listado de Secretarios</h1>
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <p class="mb-4">A continuación podrá visualizar la lista completa de Secretarios</p>
@@ -43,6 +44,7 @@
                     </tfoot>
                     <% 
                         List<Secretario>listaSecretario=(List)request.getSession().getAttribute("listaSec");
+                        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
                     %>
                     <tbody>
                         <% for (Secretario sec : listaSecretario){ %>
@@ -53,7 +55,7 @@
                             <td><%=sec.getApellido()%></td>
                             <td><%=sec.getTelefono()%></td>
                             <td><%=sec.getDireccion()%></td>
-                            <td><%=sec.getFechaNac()%></td>
+                            <td><%=formato.format(sec.getFechaNac())%></td>
                             <td><%=sec.getSector()%></td>                         
                             <td style="display:flex;width:230px;">
                                 <form name="eliminar" action="SvElimOdonto" method="POST">
@@ -63,7 +65,7 @@
                                     <input type="hidden" name="idSec" value="<%=sec.getId()%>">
                                 </form>
                                 
-                                <form name="editar" action="SvEditOdonto" method="GET">
+                                <form name="editar" action="SvEditSec" method="GET">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
                                         <i class="fas fa-pencil-alt"></i> Editar   
                                     </button>

@@ -153,5 +153,8 @@ public class Controladora {
         controlPers.eliminarResp(id);
     }
 
+    public void editarResp(Responsable resp) {
+        controlPers.editarResp(resp);
+    }
 
 }

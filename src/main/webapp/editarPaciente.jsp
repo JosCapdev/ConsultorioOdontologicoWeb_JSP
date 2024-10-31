@@ -11,23 +11,23 @@
 <form class="user" action="SvEditPacient" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="dni" name="dni" 
+            <input type="text" class="form-control form-control" id="dni" name="dni" 
                    placeholder="Dni" value="<%=pac.getDni()%>">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="nombre" name="nombre" 
+            <input type="text" class="form-control form-control" id="nombre" name="nombre" 
                    placeholder="Nombre" value="<%=pac.getNombre()%>">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="apell" name="apell" 
+            <input type="text" class="form-control form-control" id="apell" name="apell" 
                    placeholder="Apellido" value="<%=pac.getApellido()%>">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="telf" name="telf"
+            <input type="text" class="form-control form-control" id="telf" name="telf"
                    placeholder="Telefono" value="<%=pac.getTelefono()%>">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="direc" name="direc" 
+            <input type="text" class="form-control form-control" id="direc" name="direc" 
                    placeholder="Dirección" value="<%=pac.getDireccion()%>">
         </div>
         <%
