@@ -56,7 +56,7 @@ public class SvEditResp extends HttpServlet {
         resp.setTipoResp(tipoResp);
         
         control.editarResp(resp);
-        response.sendRedirect("verResponsableDelPaciente.jsp");
+        response.sendRedirect("verPacientes.jsp");
     }
 
     

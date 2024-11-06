@@ -27,8 +27,8 @@
                    placeholder="Dirección">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="fechNac" name="fechNac"
-                   placeholder="Fecha Nacimiento">
+            <input type="date" class="form-control form-control" id="fechNac" name="fechNac"
+                   placeholder="Fecha Nacimiento" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" id="parentesco" name="parentesco"

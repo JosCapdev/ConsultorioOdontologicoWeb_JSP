@@ -35,11 +35,13 @@ public class SvElimPacient extends HttpServlet {
         
         int id = Integer.parseInt(request.getParameter("idPacient"));
         Paciente pac = control.traerPacient(id);
-        int idResp = pac.getUnResposable().getId();
-        if(idResp!=0){
+        if(pac.getUnResposable()!=null){
+            int idResp = pac.getUnResposable().getId();
+            control.eliminarPacient(id);
             control.eliminarResp(idResp);
-        }
-        control.eliminarPacient(id);
+        }else{
+            control.eliminarPacient(id);
+        }    
         response.sendRedirect("SvPaciente");
    
     }

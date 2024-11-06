@@ -25,12 +25,13 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "SvTurno", urlPatterns = {"/SvTurno"})
 public class SvTurno extends HttpServlet {
+
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,25 +43,37 @@ public class SvTurno extends HttpServlet {
         response.sendRedirect("verTurnos.jsp");
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Turno turn = new Turno();
+        String dni = request.getParameter("dni");
+        List<Paciente> listaPac = control.getPacientes();
+        boolean pacienteEncontrado = false;
+
+        for (Paciente pac : listaPac) {
+            if (pac.getDni().equals(dni)) {
+                turn.setPacient(pac);
+                pacienteEncontrado = true;
+                break; 
+            }
+        }
+
+        if (!pacienteEncontrado) {
+            response.sendRedirect("PacienteNoRegistrado.jsp");
+            return;
+        }
         Date fech = Date.valueOf(request.getParameter("fechaTurn"));
         String hora = request.getParameter("horaTurn");
         String afec = request.getParameter("afeccion");
         Odontologo odonto = control.traerOdonto(Integer.parseInt(request.getParameter("odonto")));
-        Paciente pac = control.traerPacient(Integer.parseInt(request.getParameter("pac")));
         turn.setFechaTurno(fech);
         turn.setHoraTurno(hora);
         turn.setAfeccion(afec);
         turn.setOdont(odonto);
-        turn.setPacient(pac);
         control.crearTurno(turn);
         response.sendRedirect("index.jsp");
     }
-
 
     @Override
     public String getServletInfo() {

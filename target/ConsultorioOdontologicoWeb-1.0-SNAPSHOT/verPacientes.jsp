@@ -60,16 +60,10 @@
                             <td><%=pac.getTipoSangre()%></td>  
                             <td><%=pac.isTieneOS() == true ? "Si" : "No"%></td> 
                             <td style="display:flex;width:230px;">
-                                <form name="editar" action="altaTurno.jsp" method="GET">
-                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
-                                        <i class="fas fa-pencil-alt"></i> Turno   
-                                    </button>
-                                    <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
-                                </form>
                                 <%if (pac.getUnResposable() != null) {%>
                                 <form name="editar" action="SvResponsableBuscar" method="GET">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white; background-color: #28a745; margin-left: 5px;">
-                                        <i class="fas fa-pencil-alt"></i> AdultR   
+                                        <i class="fas fa-user"></i> AdultR   
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
@@ -85,6 +79,12 @@
                                 <form name="eliminar" action="SvElimPacient" method="POST">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">
                                         <i class="fas fa-trash-alt"></i> Eliminar   
+                                    </button>
+                                    <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
+                                </form>
+                                <form name="editar" action="altaTurno.jsp" method="GET">
+                                    <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
+                                        <i class="fas fa-list"></i> Crear turno   
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>

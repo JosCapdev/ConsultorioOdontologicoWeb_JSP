@@ -8,8 +8,12 @@
 
 <h1>Crear Turno</h1>
 <p>Rellenar datos del turno</p>
-<form class="user" action="SvPaciente" method="POST">
+<form class="user" action="SvTurno" method="POST">
     <div class="form-group col">
+        <div class="col-sm-6 mb-3">
+            <input type="text" class="form-control form-control" id="dni" name="dni"
+                   placeholder="DNI">
+        </div>
         <div class="col-sm-6 mb-3">
             <input type="date" class="form-control form-control" id="fecha" name="fecha">
         </div>

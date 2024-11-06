@@ -82,7 +82,7 @@
                 <div id="collapseResp" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones</h6>
-                        <a class="collapse-item" href="SvResponsable">Ver Responsable</a>
+                        <a class="collapse-item" href="SvResponsable">Ver Responsables</a>
                     </div>
                 </div>
             </li>
