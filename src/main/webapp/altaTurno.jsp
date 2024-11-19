@@ -15,7 +15,7 @@
                 if(pac!=null){
             %>        
             <input type="text" class="form-control form-control" id="dni" name="dni"
-                   placeholder="DNI" value="<%=pac.getDni()%>>
+                   placeholder="DNI" value="<%=pac.getDni()%>">
              <%  request.getSession().setAttribute("pacientTurnTab",null);
                }else{ %>
                    <input type="text" class="form-control form-control" id="dni" name="dni"

@@ -58,7 +58,7 @@
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: red; margin-right: 5px;">
                                         <i class="fas fa-trash-alt"></i> Eliminar   
                                     </button>
-                                    <input type="hidden" name="id" value="<%=turn.getIdTurno()%>">
+                                    <input type="hidden" name="idTurn" value="<%=turn.getIdTurno()%>">
                                 </form>
                             </td>
                         </tr>
