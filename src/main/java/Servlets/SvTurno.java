@@ -66,7 +66,8 @@ public class SvTurno extends HttpServlet {
         Date fech = Date.valueOf(request.getParameter("fechaTurn"));
         String hora = request.getParameter("horaTurn");
         String afec = request.getParameter("afeccion");
-        Odontologo odonto = control.traerOdonto(Integer.parseInt(request.getParameter("odonto")));
+        int idOdont = Integer.parseInt(request.getParameter("odontos"));
+        Odontologo odonto = control.traerOdonto(idOdont);
         turn.setFechaTurno(fech);
         turn.setHoraTurno(hora);
         turn.setAfeccion(afec);

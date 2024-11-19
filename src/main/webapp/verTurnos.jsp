@@ -23,6 +23,7 @@
                             <th>Fecha Turno</th>
                             <th>Hora</th>
                             <th>Paciente</th>
+                            <th>Afección</th>
                             <th>Profesional</th>
                         </tr>
                     </thead>
@@ -32,6 +33,7 @@
                             <th>Fecha Turno</th>
                             <th>Hora</th>
                             <th>Paciente</th>
+                            <th>Afección</th>
                             <th>Profesional</th>
                         </tr>
                     </tfoot>
@@ -44,7 +46,11 @@
                             <td><%=turn.getIdTurno()%></td>
                             <td><%=turn.getFechaTurno()%></td>
                             <td><%=turn.getHoraTurno()%></td>
-                            <td><%=turn.getPacient().getDni()%></td>
+                            <%String pacienteNAD= turn.getPacient().getNombre()+" "+
+                                    turn.getPacient().getApellido()+" "+turn.getPacient().getDni();
+                            %>
+                            <td><%=pacienteNAD%></td>
+                            <td><%=turn.getAfeccion()%></td>
                             <td><%=turn.getOdont().getApellido()%></td>
                             
                             <td style="display:flex;width:230px;">

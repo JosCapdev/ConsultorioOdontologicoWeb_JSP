@@ -82,11 +82,11 @@
                                     </button>
                                     <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
                                 </form>
-                                <form name="editar" action="altaTurno.jsp" method="GET">
+                                <form name="editar" action="SvTurnosAsignadosTabla" method="GET">
                                     <button type="submit" class="btn bnt-primary btn-user btn-block"; style="color: white;background-color: #4e73df ;margin-left: 5px;">
                                         <i class="fas fa-list"></i> Crear turno   
                                     </button>
-                                    <input type="hidden" name="idPacient" value="<%=pac.getId()%>">
+                                    <input type="hidden" name="idPacTurn" value="<%=pac.getId()%>">
                                 </form>
                             </td>
                         </tr>

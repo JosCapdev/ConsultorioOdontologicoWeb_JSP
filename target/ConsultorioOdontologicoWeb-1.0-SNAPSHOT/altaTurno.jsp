@@ -1,4 +1,5 @@
 <%@page import="Logica.Controladora"%>
+<%@page import="Logica.Paciente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Logica.Odontologo"%>
 <%@page import="java.util.List"%>
@@ -9,16 +10,23 @@
 <h1>Crear Turno</h1>
 <p>Rellenar datos del turno</p>
 <form class="user" action="SvTurno" method="POST">
-    <div class="form-group col">
-        <div class="col-sm-6 mb-3">
+        <div class="col-sm-6 mb-3">   
+            <% Paciente pac = (Paciente) request.getSession().getAttribute("pacientTurnTab");
+                if(pac!=null){
+            %>        
             <input type="text" class="form-control form-control" id="dni" name="dni"
-                   placeholder="DNI">
+                   placeholder="DNI" value="<%=pac.getDni()%>>
+             <%  request.getSession().setAttribute("pacientTurnTab",null);
+               }else{ %>
+                   <input type="text" class="form-control form-control" id="dni" name="dni"
+                   placeholder="DNI">       
+                   <% } %>  
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="date" class="form-control form-control" id="fecha" name="fecha">
+            <input type="date" class="form-control form-control" id="fechaTurn" name="fechaTurn">
         </div>
         <div class="col-sm-6 mb-3">
-            <select class="form-control form-control" name="horarios" id="horarios">>
+            <select class="form-control form-control" name="horaTurn" id="horaTurn">>
                 <option value="" disabled selected>Horarios</option>
                 <option value="08:00">08:00 AM</option>
                 <option value="09:00">09:00 AM</option>
